@@ -1,3 +1,5 @@
+// losowanie zmiennej computerMove
+
 let randomNumber = Math.floor(Math.random() * 3 + 1);
 
 console.log('Wylosowana liczba to: ' + randomNumber);
@@ -14,7 +16,7 @@ if(randomNumber == 1){
 
 printMessage('Mój ruch to: ' + computerMove);
 
-
+// wybór wartości playerInput
 
 let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
 
@@ -31,4 +33,28 @@ if(playerInput == '1'){
 }
 
 printMessage('Twój ruch to: ' + playerMove);
+
+// logika wyniku gry
+
+if (computerMove == 'kamień' && playerMove == 'papier') {
+    printMessage('Ty wygrywasz');
+} else if (computerMove == 'kamień' && playerMove == 'nozyce') {
+    printMessage('komputer wygrywa');
+} else if (computerMove == 'kamień' && playerMove == 'kamień') {
+    printMessage('remis');
+} else if (computerMove == 'nozyce' && playerMove == 'papier') {
+    printMessage('komputer wygrywa');
+} else if (computerMove == 'nozyce' && playerMove == 'kamień') {
+    printMessage('Ty wygrywasz');
+} else if (computerMove == 'nozyce' && playerMove == 'nozyce') {
+    printMessage('remis');
+} else if (computerMove == 'papier' && playerMove == 'papier') {
+    printMessage('remis');
+} else if (computerMove == 'papier' && playerMove == 'nozyce') {
+    printMessage('Ty wygrywasz');
+} else if (computerMove == 'papier' && playerMove == 'kamień') {
+    printMessage('komuter wygrywa');
+} else if (playerMove == 'nieznany ruch') {
+    printMessage('podałeś niewłaściwą wartość bądź zapomniałes jej podać, więc dałeś komuterowi wygrać');
+};
 
